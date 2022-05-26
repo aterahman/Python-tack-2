@@ -50,7 +50,7 @@ class Bookmyshow:
     #method to add a new movie
     def addmovie(self):
             print("Enter movie details")
-            with open("C:\\Users\\aterahman\\PycharmProjects\\HU_Python_Track\\Main assignment\\movies.csv", 'a',
+            with open("C:\\Users\\aterahman\\PycharmProjects\\pytest\\Main assignment\\movies.csv", 'a',
                   newline="",encoding='utf-8-sig') as csv_file:
                     fieldname = ['Title','Genre','Length','Cast','Director','Admin Rating','Language']
                     writer = csv.writer(csv_file, delimiter=',')
