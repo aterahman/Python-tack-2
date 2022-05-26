@@ -70,7 +70,7 @@ class Bookmyshow:
     #method to edit movie
     def editmovie(self):
 
-        csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\HU_Python_Track\\Main assignment\\movies.csv",'r',
+        csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\pytest\\Main assignment\\movies.csv",'r',
                   encoding='utf-8-sig')
         L=[]
         editor = csv.reader(csv_file, delimiter=',')
