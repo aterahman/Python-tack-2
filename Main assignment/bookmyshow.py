@@ -55,11 +55,16 @@ class Bookmyshow:
                     fieldname = ['Title','Genre','Length','Cast','Director','Admin Rating','Language']
                     writer = csv.writer(csv_file, delimiter=',')
 
-
-                    writer.writerow([input('Title '),input('Genre '),input('Length '),
-                             input('Cast '),input('Director '),input('Admin Rating '),
-                             input('Language ')])
-
+                    movietitle = input('Title ')
+                    moviegenre = input('Genre ')
+                    movielength = input('Length ')
+                    moviecast = input('Cast ')
+                    moviedirector = input('Director ')
+                    movierating = input('Admin Rating ')
+                    movielanguage = input('Language ')
+                    writer.writerow([movietitle, moviegenre, movielength,
+                                     moviecast, moviedirector, movierating,
+                                     movielanguage])
 
 
     #method to edit movie
@@ -96,7 +101,7 @@ class Bookmyshow:
 
     #method to delete a movie
     def deletemovie(self):
-        csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\HU_Python_Track\\Main assignment\\movies.csv", 'r',
+        csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\pytest\\Main assignment\\movies.csv", 'r',
                         encoding='utf-8-sig')
         L = []
         deleter = csv.reader(csv_file, delimiter=',')
@@ -110,7 +115,7 @@ class Bookmyshow:
 
         csv_file.close()
         if(found==True):
-            csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\HU_Python_Track\\Main assignment\\movies.csv", 'w+',
+            csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\pytest\\Main assignment\\movies.csv", 'w+',
                         newline="", encoding='utf-8-sig')
             writer = csv.writer(csv_file)
             writer.writerows(L)
@@ -125,13 +130,15 @@ class Bookmyshow:
 
     #method to register new user
     def register(self):
-        with open("C:\\Users\\aterahman\\PycharmProjects\\HU_Python_Track\\Main assignment\\userdetails.csv",'a',
+        with open("C:\\Users\\aterahman\\PycharmProjects\\pytest\\Main assignment\\userdetails.csv",'a',
              newline='', encoding='utf-8-sig') as csv_file:
             fieldname = ['Username','Password']
             writer = csv.DictWriter(csv_file, delimiter=',', fieldnames=fieldname)
             writer.writeheader()
-            writer.writerow({'Username':input("Enter New Username\n"),
-                             'Password':input("Enter New Password\n")})
+            usname = input("Enter New Username\n")
+            pword = input("Enter New Password\n")
+            writer.writerow({'Username': usname,
+                             'Password': pword})
 
 
     #method to login as customer
@@ -162,7 +169,7 @@ class Bookmyshow:
 
     #method to cancel tickets from cart
     def canceltickets(self):
-        csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\HU_Python_Track\\Main assignment\\usercart.csv", 'w+',
+        csv_file = open("C:\\Users\\aterahman\\PycharmProjects\\pytest\\Main assignment\\usercart.csv", 'w+',
                         encoding='utf-8-sig')
 
         L = []
